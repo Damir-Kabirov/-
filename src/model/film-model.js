@@ -6,3 +6,4 @@ export default class FilmModel {
     return this.films
    }
 }
+

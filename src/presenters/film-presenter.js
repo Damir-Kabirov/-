@@ -16,7 +16,7 @@ export default class FilmPresenter{
   sortComopnent = new SortView();
   filterComponent = new FilterView();
   ShowMoreBtnComponent = new ShowMoreBtnView();
-  filmDetailComponent = new FilmDetailView()
+ 
 
   init = (container,filmModel)=>{
     this.filmModel = filmModel;
@@ -28,11 +28,10 @@ export default class FilmPresenter{
     render(this.filmListComopnent,this.filmContainerComopnent.getElement());
     render (this.filmListContainerComponent,this.filmListComopnent.getElement())
     for(let i=0;i<this.boardFilms.length;i++){
-      console.log(this.boardFilms[i])
       render (new FilmCardView(this.boardFilms[i]),this.filmListContainerComponent.getElement());
     }
     render(this.ShowMoreBtnComponent,this.filmListComopnent.getElement());
-    render (this.filmDetailComponent,this.container.parentElement);
+    render (new FilmDetailView(this.boardFilms[1]),this.container.parentElement);
   }
 
 }
