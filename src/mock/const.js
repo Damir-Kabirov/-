@@ -21,4 +21,4 @@ const imgSrc = [
 ]
 
 
-export {writers,actors,description,imgSrc}
+export {writers,actors,description,imgSrc,commentEmotion}

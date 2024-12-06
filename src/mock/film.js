@@ -2,11 +2,13 @@ import {getRandomNumber,addRandomElementArray,getRandomSentences,getRandomElemen
 import {actors,writers,description,imgSrc} from './const.js'
 
 
-const generateFilm = ()=>{
+
+
+const generateFilm = (comments)=>{
   return {
     id: "0",
     comments: [
-      1,2,3
+        ...Array.from({length:getRandomNumber(0,5)},()=>{return getRandomNumber(0,comments.getComments().length-1)})
     ],
     film_info: {
       title: "A Little Pony Without The Carpet",

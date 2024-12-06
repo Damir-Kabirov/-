@@ -16,10 +16,11 @@ export default class FilmPresenter{
   sortComopnent = new SortView();
   filterComponent = new FilterView();
   ShowMoreBtnComponent = new ShowMoreBtnView();
- 
+  
 
-  init = (container,filmModel)=>{
+  init = (container,filmModel,commentModal)=>{
     this.filmModel = filmModel;
+    this.commentModal = commentModal;
     this.boardFilms = [...this.filmModel.getFilms()]
     this.container = container;
     render(this.filterComponent,this.container);
@@ -31,7 +32,7 @@ export default class FilmPresenter{
       render (new FilmCardView(this.boardFilms[i]),this.filmListContainerComponent.getElement());
     }
     render(this.ShowMoreBtnComponent,this.filmListComopnent.getElement());
-    render (new FilmDetailView(this.boardFilms[1]),this.container.parentElement);
+    render (new FilmDetailView(this.boardFilms[1],this.commentModal),this.container.parentElement);
   }
 
 }

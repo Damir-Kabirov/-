@@ -1,7 +1,7 @@
 import {getRandomElement} from '../utils/utils.js'
 import {commentEmotion} from './const.js'
-const commentsLength =0
-const generateComments = ()=>{
+let commentsLength =0
+const generateComment = ()=>{
     commentsLength++
     return {
         id: commentsLength,
@@ -12,4 +12,4 @@ const generateComments = ()=>{
       }
 }
 
-export {generateComments}
+export {generateComment} 

@@ -57,6 +57,23 @@ const humanizeRuntime = (time)=>{
 }
 
 const humanizeFilmDate = (date)=>dayjs(date).format('D MMMM YYYY');
-  
 
-export {getRandomNumber,addRandomElementArray,getRandomElement,getYearfromDate,humanizeRuntime,humanizeFilmDate,getRandomSentences,trimText}
+const getRandomUniqueId = (objects) => {
+  if (objects.length === 0) {
+      return null; // Если массив пуст, возвращаем null
+  }
+
+  const randomIndex = getRandomNumber(objects.length - 1, 0);
+  const randomObject = objects[randomIndex];
+  const randomId = randomObject.id;
+
+  // Удаляем выбранный объект из массива, чтобы избежать повторений
+  objects.splice(randomIndex, 1);
+
+  return randomId;
+};  
+function findObjectById(objects, id) {
+  return objects.find(object => object.id === id);
+}
+
+export {getRandomNumber,addRandomElementArray,getRandomElement,getYearfromDate,humanizeRuntime,humanizeFilmDate,getRandomSentences,trimText,getRandomUniqueId,findObjectById}
